@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <carbon.widget.ConstraintLayout
+            android:id="@+id/dialog_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_16sdp"
+            android:background="@color/white"
+            android:padding="@dimen/_20sdp"
+            app:carbon_cornerRadius="@dimen/_8sdp"
+            app:carbon_rippleRadius="@dimen/_6sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/imageGuide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="@dimen/_1sdp" />
+
+            <ImageView
+                android:id="@+id/titleImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/full_sad"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/fontBold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center"
+                android:text="@string/error"
+                android:textColor="#000000"
+                android:textSize="@dimen/_18ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleImage" />
+
+            <TextView
+                android:id="@+id/info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:gravity="center"
+                android:textColor="#64646c"
+                android:maxLines="10"
+                android:textSize="@dimen/_12ssp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title"
+                android:text="info"/>
+
+            <carbon.widget.TextView
+                android:id="@+id/done"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:background="#c51f3d"
+                android:gravity="center"
+                android:paddingStart="@dimen/_50sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingEnd="@dimen/_50sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:text="@string/done"
+                android:textAllCaps="false"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_14ssp"
+                app:carbon_cornerRadius="@dimen/_6sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/info" />
+
+
+        </carbon.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

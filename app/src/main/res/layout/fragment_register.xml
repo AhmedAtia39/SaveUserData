@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="model"
+            type="com.example.task.UserModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_14sdp"
+            tools:context=".fragments.RegisterFragment"
+            android:paddingBottom="@dimen/_24sdp">
+
+            <ImageView
+                android:id="@+id/imgSmile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/smill"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="@dimen/_20sdp"/>
+
+            <TextView
+                android:id="@+id/txtHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:gravity="center"
+                android:text="@string/txtHint"
+                android:textColor="@color/black"
+                style="@style/fontBold"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintTop_toBottomOf="@+id/imgSmile" />
+
+            <include
+                android:id="@+id/name"
+                layout="@layout/custom_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/txtHint"
+                app:mHint="@{@string/name}"
+                app:mLabel="@{@string/name}"
+                app:mText="@={model.name}" />
+
+            <include
+                android:id="@+id/age"
+                layout="@layout/custom_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/name"
+                app:mHint="@{@string/age}"
+                app:mLabel="@{@string/age}"
+                app:mText="@={model.age}"
+                app:type="@{@string/Number}" />
+
+            <include
+                android:id="@+id/jobTitle"
+                layout="@layout/custom_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/age"
+                app:mHint="@{@string/job_title}"
+                app:mLabel="@{@string/job_title}"
+                app:mText="@={model.job}"/>
+
+            <TextView
+                android:id="@+id/txt_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/jobTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/gender"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp" />
+
+            <RadioGroup
+                android:id="@+id/rg_gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/txt_gender"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/male"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="@string/male"
+                    android:textColor="@color/black" />
+
+                <RadioButton
+                    android:id="@+id/female"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_weight="1"
+                    android:text="@string/female"
+                    android:textColor="@color/black" />
+
+            </RadioGroup>
+
+            <carbon.widget.Button
+                android:id="@+id/btn_save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_24sdp"
+                android:background="@color/red"
+                android:padding="@dimen/_10sdp"
+                android:text="@string/save"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16ssp"
+                app:carbon_cornerRadius="@dimen/_12sdp"
+                app:layout_constraintTop_toBottomOf="@+id/rg_gender" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

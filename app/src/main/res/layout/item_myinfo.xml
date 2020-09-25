@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="text"
+            type="String" />
+        <variable
+            name="value"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/_6sdp"
+        android:paddingHorizontal="@dimen/_12sdp"
+        >
+
+        <TextView
+            android:id="@+id/txt_placeholder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/red"
+            android:text="@{text}"
+            android:textSize="@dimen/_16ssp"
+            style="@style/fontBold"/>
+
+        <TextView
+            android:id="@+id/txt_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="@dimen/_16sdp"
+            app:layout_constraintStart_toEndOf="@+id/txt_placeholder"
+            android:textColor="@color/gray"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:textAlignment="viewStart"
+            android:text='@{value.equals("1")? @string/male : value.equals("2")?@string/female : value}'
+            android:textSize="@dimen/_14ssp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

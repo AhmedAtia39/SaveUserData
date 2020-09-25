@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.text.InputType" />
+
+        <import type="android.view.inputmethod.EditorInfo" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="mText"
+            type="String" />
+
+        <variable
+            name="mLabel"
+            type="String" />
+
+        <variable
+            name="mHint"
+            type="String" />
+
+        <variable
+            name="type"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:background="@drawable/style_stroke_gray"
+            app:onFocusChange="@{txtLabel}"
+            android:id="@+id/edtText"
+            style="@style/edittextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:hint="@{mHint}"
+            android:maxHeight="@dimen/_50sdp"
+            android:includeFontPadding="false"
+            android:inputType='@{type.equals("Number")? InputType.TYPE_CLASS_NUMBER :  type.equals("LongText") ? (InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_MULTI_LINE) : InputType.TYPE_CLASS_TEXT }'
+            android:paddingHorizontal="@dimen/_14sdp"
+            android:paddingTop="@dimen/_16sdp"
+            android:text="@={mText}"
+            android:textAlignment="viewStart"
+            android:singleLine='@{!type.equals("LongText")}'
+            android:imeOptions='@{type.equals("LongText") ? EditorInfo.IME_FLAG_NO_ENTER_ACTION : EditorInfo.IME_ACTION_UNSPECIFIED}'
+            android:paddingBottom="@dimen/_14sdp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/gray"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:background="@color/come_loginBG"
+            android:padding="@dimen/_4sdp"
+            android:text="@{mLabel}"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/_14ssp"
+            android:visibility='@{mText==null || mText.equals("")?View.GONE:View.VISIBLE}'
+            app:layout_constraintBottom_toTopOf="@+id/edtText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/edtText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

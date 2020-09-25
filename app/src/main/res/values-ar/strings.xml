@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Task</string>
+    <string name="txtHint">من فضلك أدخل بياناتك</string>
+    <string name="name">الإسم</string>
+    <string name="age">العمر</string>
+    <string name="job_title">عنوان الوظيفة</string>
+    <string name="gender">النوع</string>
+    <string name="male">ذكر</string>
+    <string name="female">أنثي</string>
+    <string name="save">حفظ</string>
+    <string name="please_write_name">برجاء كتابة إسمك</string>
+    <string name="please_write_age">برجاء كتابة عمرك</string>
+    <string name="please_write_job">برجاء كتابة عنوان وظيفتك</string>
+    <string name="error">خطأ</string>
+    <string name="done">نعم</string>
+    <string name="welcome">مرحباً</string>
+    <string name="logout">تسجيل الخروج</string>
+    <string name="needLogout">هل تريد تسجيل الخروج؟</string>
+    <string name="no">إلغاء</string>
+    <string name="displayAllUsers">عرض كل المستخدمين</string>
+</resources>
